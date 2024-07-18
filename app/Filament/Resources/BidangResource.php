@@ -27,7 +27,6 @@ class BidangResource extends Resource
             ->schema([
                 Card::make()->schema([
                     TextInput::make('nama')->required()->maxLength(255),
-
                 ]),
             ]);
     }
