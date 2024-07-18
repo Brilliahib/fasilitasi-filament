@@ -56,7 +56,8 @@ class EventResource extends Resource
                     return (string) ($rowLoop->iteration + $livewire->getTableRecordsPerPage() * ($livewire->getTablePage() - 1));
                 }),
                 TextColumn::make('title'),
-                ColorColumn::make('color'),
+                TextColumn::make('users.name'),
+                TextColumn::make('keterangan'),
                 TextColumn::make('start_at'),
                 TextColumn::make('end_at'),
             ])

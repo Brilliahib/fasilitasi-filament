@@ -58,7 +58,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Event::class, 'user_event');
     }
 
-    public function bidangs()
+    public function bidang()
     {
         return $this->belongsTo(Bidang::class);
     }

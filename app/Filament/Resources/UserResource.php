@@ -32,7 +32,7 @@ class UserResource extends Resource
                     TextInput::make('name')->required()->maxLength(255),
                     TextInput::make('email')->required()->maxLength(255),
                     TextInput::make('password')->password()->required()->maxLength(255),
-                    Select::make('bidang_id')->relationship('bidangs', 'nama'),
+                    Select::make('bidang_id')->relationship('bidang', 'nama'),
                 ]),
             ]);
     }
@@ -46,7 +46,7 @@ class UserResource extends Resource
                 }),
                 TextColumn::make('name'),
                 TextColumn::make('email'),
-                TextColumn::make('bidangs.nama'),
+                TextColumn::make('bidang.nama'),
             ])
             ->filters([
                 //
