@@ -22,6 +22,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+use function Laravel\Prompts\select;
+
 class EventResource extends Resource
 {
     protected static ?string $model = Event::class;
@@ -40,6 +42,7 @@ class EventResource extends Resource
                     'remote' => 'Remote',
                     'on site' => 'On Site',
                 ]),
+                Select::make('user_id')->relationship('users', 'name')->multiple(),
                 FileUpload::make('image'),
             ]),
         ]);
@@ -67,8 +70,8 @@ class EventResource extends Resource
     public static function getRelations(): array
     {
         return [
-                //
-            ];
+            //
+        ];
     }
 
     public static function getPages(): array
